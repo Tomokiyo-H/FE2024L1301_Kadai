@@ -5,28 +5,18 @@ new Vue({
         return {
             //「現在の数」表示用データ，「計算用の数」取得用データを準備する（2行）
             count:0,
-            num:0
+            inNumber:1
         };
     },
     methods: {
         /* ボタン押下時に動作するメソッドを準備する（たす、ひく、かける、わる、リセット）
            現在の数に応じて表示する画像を変更するメソッドを準備する */
-        tasu() {this.count=this.count+this.num;
-            
-        },
-        hiku() {this.count=this.count-this.num;
-            
-        },
-        kake() {this.count=this.count*this.num;
-            
-        },
-        waru() {this.count=this.count/this.num;
-            
-        },
-        reset() {this.count=0;
-            
-        },
-        imageChange() {
+        tasu(){this.count=this.count+this.inNumber;},
+        hiku(){this.count=this.count-this.inNumber;},
+        kakeru(){this.count=this.count*this.inNumber;},
+        waru(){this.count=this.count/this.inNumber;},
+        reset(){this.count=0,this.inNumber=1;},
+        imageChange(){
             //HTMLからimage_areaの情報を取得する
             
             //現在の数が0の場合「hime1.jfif」をimage_areaに表示する（<img src="./img/hime1.jfif" width="300">）
