@@ -4,31 +4,26 @@ new Vue({
     data() {
         return {
             //「現在の数」表示用データ，「計算用の数」取得用データを準備する（2行）
-            
-            
+            count:0,
+            num:0
         };
     },
     methods: {
         /* ボタン押下時に動作するメソッドを準備する（たす、ひく、かける、わる、リセット）
            現在の数に応じて表示する画像を変更するメソッドを準備する */
-        tasu() {
-            
-            
-        },
-        hiku() {
-            
+        tasu() {this.count=this.count+this.num;
             
         },
-        kake() {
-            
-            
-        },
-        waru() {
-            
+        hiku() {this.count=this.count-this.num;
             
         },
-        reset() {
+        kake() {this.count=this.count*this.num;
             
+        },
+        waru() {this.count=this.count/this.num;
+            
+        },
+        reset() {this.count=0;
             
         },
         imageChange() {
